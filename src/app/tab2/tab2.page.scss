@@ -1,0 +1,68 @@
+ion-searchbar {
+    margin: 25px 0 10px;
+}
+
+div.container-search-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.disabled-button {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    .search-button {
+        width: 30%;
+        height: 40px;
+        background: #ce504b;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px;
+
+        .label-search-button {
+            font-weight: 600;
+        }
+
+        ion-icon {
+            width: 28px;
+            height: 28px;
+            font-size: 28px;
+        }
+    }
+}
+
+.container-results-manga {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    .box-results-manga {
+        width: 100%;
+        display: flex;
+        border-radius: 15px;
+        border: 10px solid var(--ion-background-color, #ffffff);
+        background: #ce504b;
+        overflow: hidden;
+
+        .preview-image {
+            width: 144px;
+        }
+
+        .label-info-results-manga {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            width: 100%;
+            padding: 0 20px;
+
+            .title-results-manga {
+                font-size: 18px;
+            }
+        }
+    }
+}

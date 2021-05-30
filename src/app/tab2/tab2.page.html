@@ -10,4 +10,39 @@
 
   <app-logo></app-logo>
 
+  <ion-searchbar (ionClear)="isSearchedEvent=false" (keydown.enter)="searchByTile($event.target)" #title>
+  </ion-searchbar>
+
+  <div class="container-search-button" [ngClass]="{'disabled-button' : !title || title.value=='' }"
+    (click)="searchByTile(title)">
+    <div class="search-button">
+      <div class="label-search-button">Cerca</div>
+      <ion-icon name="search-circle"></ion-icon>
+    </div>
+  </div>
+
+
+  <div *ngIf="isSearchedEvent">
+
+    <div *ngIf="!results || results.length==0">
+      Mi spiace, non ho trovato nessun manga
+    </div>
+
+    <div *ngIf="results && results.length>0" class="container-results-manga">
+      <div *ngFor="let manga of showOnlyManga(results)" class="box-results-manga">
+        <img class="preview-image" src="{{manga.immaggine}}" alt="">
+
+        <div class="label-info-results-manga">
+          <div class="title-results-manga">{{manga.titolo}}</div>
+          <div class="type-results-manga">Tipo opera: <span>{{manga.tipo_opera}}</span></div>
+          <div class="categoria-results-manga">Categoria: <span>{{manga.categoria}}</span></div>
+          <div class="anno-results-manga">Anno inizio: <span>{{manga.anno_inizio}}</span></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </ion-content>
