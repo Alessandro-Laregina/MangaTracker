@@ -28,6 +28,10 @@ export class Tab2Page {
         });
   }
 
+  getInfoManga(url: string) {
+    this.apiService.getInfoManga(url).then(console.log);
+  }
+
   showOnlyManga(results: TitleSearchedInterface[]): TitleSearchedInterface[] {
     let filter = results.filter((x) => x.tipo_opera == 'Fumetto');
     return filter;

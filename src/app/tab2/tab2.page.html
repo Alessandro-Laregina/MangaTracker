@@ -29,9 +29,8 @@
     </div>
 
     <div *ngIf="results && results.length>0" class="container-results-manga">
-      <div *ngFor="let manga of showOnlyManga(results)" class="box-results-manga">
-        <img class="preview-image" src="{{manga.immaggine}}" alt="">
-
+      <div *ngFor="let manga of showOnlyManga(results)" class="box-results-manga" (click)="getInfoManga(manga.link)">
+        <img class="preview-image" src="{{manga.immaggine}}" alt="cover">
         <div class="label-info-results-manga">
           <div class="title-results-manga">{{manga.titolo}}</div>
           <div class="type-results-manga">Tipo opera: <span>{{manga.tipo_opera}}</span></div>
